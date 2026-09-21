@@ -116,7 +116,13 @@ input {
 }
 
 .back {
-    background: #555;
+    background: linear-gradient(135deg, #64748b, #475569);
+    box-shadow: 0 4px 10px rgba(71,85,105,0.2);
+}
+
+.back:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 15px rgba(71,85,105,0.25);
 }
 
 .result {
