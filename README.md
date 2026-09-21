@@ -93,14 +93,26 @@ input {
 
 .action {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     margin-top: 10px;
     border: none;
-    border-radius: 7px;
-    background: #2563eb;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
     color: white;
-    font-size: 16px;
+    font-size: 17px;
+    font-weight: 600;
     cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 10px rgba(37,99,235,0.25);
+}
+
+.action:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 15px rgba(37,99,235,0.3);
+}
+
+.action:active {
+    transform: scale(0.98);
 }
 
 .back {
