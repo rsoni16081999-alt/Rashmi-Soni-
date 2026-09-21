@@ -41,7 +41,7 @@ header p {
 .calculator-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 15px;
+    gap: 18px;
 }
 
 .calc-button {
