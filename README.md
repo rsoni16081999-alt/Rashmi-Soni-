@@ -12,10 +12,8 @@
 }
 
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f7fb;
-    color: #222;
+    <h1>🇮🇳 India Calculator Hub</h1>
+<p>Smart • Fast • Free Online Calculators</p>
 }
 
 header {
