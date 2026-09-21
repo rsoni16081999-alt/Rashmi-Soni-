@@ -57,7 +57,9 @@ header p {
 .calc-button:hover {
     transform: translateY(-2px);
 }
-
+.calc-button:active {
+    transform: scale(0.97);
+}
 .calc-button {
     border: none;
     background: linear-gradient(135deg, #ffffff, #eef5ff);
