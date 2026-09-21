@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>India Calculator Hub</title>
+</head>
+
+<body>
+
+    <h1>🇮🇳 India Calculator Hub</h1>
+
+    <h2>Free Online Calculators</h2>
+
+    <p>Choose a calculator:</p>
+
+    <button>🎂 Age Calculator</button>
+
+    <button>💯 Percentage Calculator</button>
+
+    <button>📅 Date Calculator</button>
+
+    <button>⚖️ BMI Calculator</button>
+
+    <button>💰 Discount Calculator</button>
+
+</body>
+</html>
