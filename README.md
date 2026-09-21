@@ -84,11 +84,19 @@ header p {
 
 input {
     width: 100%;
-    padding: 12px;
+    padding: 13px;
     margin: 8px 0;
-    border: 1px solid #ccc;
-    border-radius: 7px;
+    border: 1px solid #d1d5db;
+    border-radius: 9px;
     font-size: 16px;
+    outline: none;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
 }
 
 .action {
