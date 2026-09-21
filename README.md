@@ -126,11 +126,15 @@ input {
 }
 
 .result {
-    margin-top: 15px;
-    padding: 12px;
-    background: #eef5ff;
-    border-radius: 7px;
-    font-weight: bold;
+    margin-top: 18px;
+    padding: 15px;
+    background: linear-gradient(135deg, #eef5ff, #e0ecff);
+    border-left: 5px solid #2563eb;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 17px;
+    color: #1e3a8a;
+    box-shadow: 0 3px 10px rgba(37,99,235,0.1);
 }
 
 footer {
