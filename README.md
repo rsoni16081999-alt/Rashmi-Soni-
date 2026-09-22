@@ -44,15 +44,7 @@ header p {
     gap: 18px;
 }
 
-.calc-button {
-    border: none;
-    background: white;
-    padding: 22px;
-    border-radius: 12px;
-    font-size: 18px;
-    cursor: pointer;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-}
+
 
 .calc-button:hover {
     transform: translateY(-2px);
@@ -77,6 +69,9 @@ header p {
     transform: translateY(-4px);
     box-shadow: 0 8px 18px rgba(37,99,235,0.2);
 }
+ .calc-button:active {
+    transform: scale(0.97);
+ }   
 
 .calculator.active {
     display: block;
