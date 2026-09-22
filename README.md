@@ -69,7 +69,7 @@ header p {
     font-weight: 600;
     color: #1e3a8a;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);}
     transition: all 0.25s ease;
 }
 
