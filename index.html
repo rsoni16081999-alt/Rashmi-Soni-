@@ -493,7 +493,12 @@ function calculateDiscount() {
 
   <button onclick="calculateEMI()"
     style="padding:12px 20px; cursor:pointer;">
-    Calscript>
+      Calculate EMI
+  </button>
+ <p id="emiResult"></p>
+<script>
+function calculateEMI() {
+    
   const P = Number(document.getElementById("loanAmount").value);
   const annualRate = Number(document.getElementById("interestRate").value);
   const years = Number(document.getElementById("loanTenure").value);
@@ -501,8 +506,17 @@ function calculateDiscount() {
   if (P <= 0 || annualRate < 0 || years <= 0) {
     document.getElementById("emiResult").innerHTML =
       "Please enter valid loan details.";
-    return;
+      return;
   }
+    const monthlyRate = annualRate / 12 / 100;
+const months = years * 12;
+const emi = (P * monthlyRate * Math.pow(1 + monthlyRate, months)) /
+            (Math.pow(1 + monthlyRate, months) - 1);
+    document.getElementById("emiResult").innerHTML =
+  "Monthly EMI: ₹" + emi.toFixed(2);
+    }
+</script>
+  
 
   const r = annualRate / 12 / 100;
   const n = years * 12;
