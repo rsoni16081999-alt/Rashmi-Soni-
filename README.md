@@ -52,7 +52,7 @@ header p {
     font-size: 18px;
     cursor: pointer;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-
+}
 
 .calc-button:hover {
     transform: translateY(-2px);
@@ -69,7 +69,7 @@ header p {
     font-weight: 600;
     color: #1e3a8a;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.12);}
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
     transition: all 0.25s ease;
 }
 
