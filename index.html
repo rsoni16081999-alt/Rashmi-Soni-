@@ -473,6 +473,62 @@ function calculateDiscount() {
 }
 
 </script>
+    <section style="background:white; padding:20px; margin:20px 0; border-radius:10px;">
+  <h2>💰 EMI Calculator</h2>
+
+  <label>Loan Amount (₹)</label><br>
+  <input id="loanAmount" type="number" placeholder="e.g. 500000"
+    style="padding:10px; width:100%; margin:8px 0;"><br>
+
+  <label>Interest Rate (% per year)</label><br>
+  <input id="interestRate" type="number" step="0.01" placeholder="e.g. 8.5"
+    style="padding:10px; width:100%; margin:8px 0;"><br>
+
+  <label>Loan Tenure (Years)</label><br>
+  <input id="loanTenure" type="number" placeholder="e.g. 5"
+    style="padding:10px; width:100%; margin:8px 0;"><br>
+
+  <button onclick="calculateEMI()"
+    style="padding:12px 20px; cursor:pointer;">
+    Calculate EMI
+  </button>
+
+  <div id="emiResult" style="margin-top:15px; font-weight:bold;"></div>
+</section>
+
+<script>
+function calculateEMI() {
+  const P = Number(document.getElementById("loanAmount").value);
+  const annualRate = Number(document.getElementById("interestRate").value);
+  const years = Number(document.getElementById("loanTenure").value);
+
+  if (P <= 0 || annualRate < 0 || years <= 0) {
+    document.getElementById("emiResult").innerHTML =
+      "Please enter valid loan details.";
+    return;
+  }
+
+  const r = annualRate / 12 / 100;
+  const n = years * 12;
+
+  let emi;
+
+  if (r === 0) {
+    emi = P / n;
+  } else {
+    emi = P * r * Math.pow(1 + r, n) /
+          (Math.pow(1 + r, n) - 1);
+  }
+
+  const totalPayment = emi * n;
+  const totalInterest = totalPayment - P;
+
+  document.getElementById("emiResult").innerHTML =
+    "Monthly EMI: ₹" + emi.toFixed(2) +
+    "<br>Total Interest: ₹" + totalInterest.toFixed(2) +
+    "<br>Total Payment: ₹" + totalPayment.toFixed(2);
+}
+</script>
 <section style="background:white; padding:20px; margin:20px 0; border-radius:12px; box-shadow:0 3px 10px rgba(0,0,0,0.1);">
     <h2>✨ Why Use India Calculator Hub?</h2>
     <p>Fast, simple and free online calculators for everyday needs.</p>
