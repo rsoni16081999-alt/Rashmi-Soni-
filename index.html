@@ -1,1 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>India Calculator Hub</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #222;
+    }
+
+    header {
+      background: #1f4e79;
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    header p {
+      margin: 8px 0 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .calculator-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 15px;
+    }
+
+    .calculator-button {
+      border: none;
+      background: white;
+      padding: 20px 10px;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    }
+
+    .calculator-button:active {
+      transform: scale(0.98);
+    }
+
+    .calculator {
+      display: none;
+      background: white;
+      margin-top: 25px;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    }
+
+    .calculator.active {
+      display: block;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .calculate-btn {
+      background: #1f4e79;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .result {
+      margin-top: 15px;
+      font-weight: bold;
+      line-height: 1.8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      margin-top: 30px;
+      background: #222;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>India Calculator Hub</h1>
+  <p>Simple, Fast & Free Online Calculators</p>
+</header>
+
+<div class="container">
+
+  <h2>Choose a Calculator</h2>
+
+  <div class="calculator-grid">
+
+    <button class="calculator-button" onclick="openAgeCalculator()">
+      🎂 Age Calculator
+    </button>
+
+    <button class="calculator-button" onclick="showMessage('Percentage Calculator')">
+      💯 Percentage
+    </button>
+
+    <button class="calculator-button" onclick="showMessage('BMI Calculator')">
+      ⚖️ BMI Calculator
+    </button>
+
+    <button class="calculator-button" onclick="showMessage('Date Difference')">
+      📅 Date Difference
+    </button>
+
+    <button class="calculator-button" onclick="showMessage('Discount Calculator')">
+      💰 Discount
+    </button>
+
+    <button class="calculator-button" onclick="showMessage('EMI Calculator')">
+      🏦 EMI Calculator
+    </button>
+
+    <button class="calculator-button" onclick="showMessage('GST Calculator')">
+      🧾 GST Calculator
+    </button>
+
+    <button class="calculator-button" onclick="showMessage('Simple Interest')">
+      💵 Simple Interest
+    </button>
+
+    <button class="calculator-button" onclick="showMessage('Compound Interest')">
+      📈 Compound Interest
+    </button>
+
+    <button class="calculator-button" onclick="showMessage('Loan Calculator')">
+      🏠 Loan Calculator
+    </button>
+
+  </div>
+
+  <div id="calculatorArea"></div>
+
+</div>
+
+<footer>
+  © 2026 India Calculator Hub
+</footer>
+
+
+<script>
+
+function openAgeCalculator() {
+
+  const area = document.getElementById("calculatorArea");
+
+  area.innerHTML = `
+    <div class="calculator active">
+
+      <h2>🎂 Age Calculator</h2>
+
+      <label>Enter your Date of Birth:</label>
+
+      <input type="date" id="dateOfBirth">
+
+      <button class="calculate-btn" onclick="calculateAge()">
+        Calculate Age
+      </button>
+
+      <div id="ageResult" class="result"></div>
+
+    </div>
+  `;
+
+  area.scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+
+function calculateAge() {
+
+  const dobInput = document.getElementById("dateOfBirth").value;
+  const result = document.getElementById("ageResult");
+
+  if (!dobInput) {
+    result.innerHTML = "Please enter your date of birth.";
+    return;
+  }
+
+  const dob = new Date(dobInput);
+  const today = new Date();
+
+  if (dob > today) {
+    result.innerHTML = "Date of birth cannot be in the future.";
+    return;
+  }
+
+  let years = today.getFullYear() - dob.getFullYear();
+  let months = today.getMonth() - dob.getMonth();
+  let days = today.getDate() - dob.getDate();
+
+  if (days < 0) {
+    months--;
+
+    const previousMonth = new Date(
+      today.getFullYear(),
+      today.getMonth(),
+      0
+    );
+
+    days += previousMonth.getDate();
+  }
+
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+
+  result.innerHTML =
+    "Your Age is: " +
+    years +
+    " Years, " +
+    months +
+    " Months, " +
+    days +
+    " Days";
+}
+
+
+function showMessage(name) {
+
+  const area = document.getElementById("calculatorArea");
+
+  area.innerHTML = `
+    <div class="calculator active">
+      <h2>${name}</h2>
+      <p>This calculator will be added next.</p>
+    </div>
+  `;
+
+  area.scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+</script>
+
+</body>
+</html>
