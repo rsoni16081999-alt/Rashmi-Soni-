@@ -1,112 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>India Calculator Hub</title>
+<title>India Calculator Hub - Free Online Calculators</title>
+<meta name="description" content="India Calculator Hub offers free, simple and fast online calculators including Age, BMI, EMI, GST, Percentage and more.">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f7fb;
-      color: #222;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    header {
-      background: #1f4e79;
-      color: white;
-      text-align: center;
-      padding: 25px 15px;
-    }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f7fb;
+  color: #1f2937;
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 30px;
-    }
+/* HEADER */
+header {
+  background: linear-gradient(135deg, #164e63, #2563eb);
+  color: white;
+  text-align: center;
+  padding: 42px 18px;
+}
 
-    header p {
-      margin: 8px 0 0;
-    }
+header h1 {
+  margin: 0;
+  font-size: 34px;
+}
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
+header p {
+  margin: 10px 0 0;
+  font-size: 16px;
+  opacity: 0.95;
+}
 
-    .calculator-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 15px;
-    }
+/* MAIN */
+.container {
+  max-width: 1050px;
+  margin: auto;
+  padding: 25px 16px 40px;
+}
 
-    .calculator-button {
-      border: none;
-      background: white;
-      padding: 20px 10px;
-      border-radius: 12px;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: bold;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-    }
+.section-title {
+  text-align: center;
+  margin-bottom: 22px;
+}
 
-    .calculator-button:hover {
-      transform: translateY(-2px);
-    }
+.section-title h2 {
+  margin-bottom: 7px;
+  font-size: 26px;
+}
 
-    .calculator {
-      display: none;
-      background: white;
-      margin-top: 25px;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-    }
+.section-title p {
+  margin: 0;
+  color: #6b7280;
+}
 
-    .calculator.active {
-      display: block;
-    }
+/* CALCULATOR BUTTONS */
+.calculator-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+  gap: 15px;
+}
 
-    input {
-      width: 100%;
-      padding: 12px;
-      margin: 8px 0 15px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 16px;
-    }
+.calculator-button {
+  border: none;
+  background: white;
+  color: #1f2937;
+  padding: 22px 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+  transition: 0.2s;
+}
 
-    .calculate-btn {
-      background: #1f4e79;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 16px;
-    }
+.calculator-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.13);
+}
 
-    .result {
-      margin-top: 15px;
-      font-weight: bold;
-      line-height: 1.8;
-    }
+.calculator-button span {
+  display: block;
+  font-size: 30px;
+  margin-bottom: 8px;
+}
 
-    footer {
-      text-align: center;
-      padding: 25px;
-      margin-top: 30px;
-      background: #222;
-      color: white;
-    }
-  </style>
+/* CALCULATOR BOX */
+#calculatorArea {
+  margin-top: 25px;
+}
+
+.calculator {
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 6px 22px rgba(0,0,0,0.09);
+  border: 1px solid #e5e7eb;
+}
+
+.calculator h2 {
+  margin-top: 0;
+  color: #164e63;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-top: 12px;
+  margin-bottom: 6px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #d1d5db;
+  border-radius: 9px;
+  font-size: 16px;
+  background: white;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+/* BUTTONS */
+.calculate-btn {
+  background: linear-gradient(135deg, #164e63, #2563eb);
+  color: white;
+  border: none;
+  padding: 13px 22px;
+  border-radius: 9px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.calculate-btn:hover {
+  opacity: 0.92;
+}
+
+.back-btn {
+  background: #eef2f7;
+  color: #374151;
+  border: none;
+  padding: 11px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+/* RESULT */
+.result {
+  margin-top: 18px;
+  padding: 15px;
+  background: #f0f7ff;
+  border-left: 4px solid #2563eb;
+  border-radius: 8px;
+  line-height: 1.8;
+  font-weight: bold;
+}
+
+/* INFO */
+.info-box {
+  margin-top: 18px;
+  padding: 14px;
+  background: #f8fafc;
+  border-radius: 9px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 28px 15px;
+  background: #111827;
+  color: white;
+  margin-top: 20px;
+}
+
+footer p {
+  margin: 5px;
+  color: #d1d5db;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+
+  header {
+    padding: 32px 15px;
+  }
+
+  header h1 {
+    font-size: 27px;
+  }
+
+  .container {
+    padding: 20px 12px 35px;
+  }
+
+  .calculator-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 11px;
+  }
+
+  .calculator-button {
+    padding: 17px 6px;
+    font-size: 13px;
+  }
+
+  .calculator-button span {
+    font-size: 25px;
+  }
+
+  .calculator {
+    padding: 18px;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -118,61 +243,65 @@
 
 <div class="container">
 
-  <h2>Choose a Calculator</h2>
+  <div class="section-title">
+    <h2>Choose a Calculator</h2>
+    <p>Select any calculator below</p>
+  </div>
 
   <div class="calculator-grid">
 
     <button class="calculator-button" onclick="openCalculator('age')">
-      🎂 Age Calculator
+      <span>🎂</span>Age Calculator
     </button>
 
     <button class="calculator-button" onclick="openCalculator('percentage')">
-      💯 Percentage
+      <span>💯</span>Percentage
     </button>
 
     <button class="calculator-button" onclick="openCalculator('bmi')">
-      ⚖️ BMI Calculator
+      <span>⚖️</span>BMI Calculator
     </button>
 
     <button class="calculator-button" onclick="openCalculator('date')">
-      📅 Date Difference
+      <span>📅</span>Date Difference
     </button>
 
     <button class="calculator-button" onclick="openCalculator('discount')">
-      💰 Discount Calculator
+      <span>💰</span>Discount
     </button>
 
     <button class="calculator-button" onclick="openCalculator('emi')">
-      🏦 EMI Calculator
+      <span>🏦</span>EMI Calculator
     </button>
 
     <button class="calculator-button" onclick="openCalculator('gst')">
-      🧾 GST Calculator
+      <span>🧾</span>GST Calculator
     </button>
 
     <button class="calculator-button" onclick="openCalculator('simpleInterest')">
-      💵 Simple Interest
+      <span>💵</span>Simple Interest
     </button>
 
     <button class="calculator-button" onclick="openCalculator('compoundInterest')">
-      📈 Compound Interest
+      <span>📈</span>Compound Interest
     </button>
 
     <button class="calculator-button" onclick="openCalculator('loan')">
-      🏠 Loan Calculator
+      <span>🏠</span>Loan Calculator
     </button>
 
   </div>
-
-  <!-- Calculators will be added here -->
 
   <div id="calculatorArea"></div>
 
 </div>
 
 <footer>
-  © 2026 India Calculator Hub
+  <p><strong>India Calculator Hub</strong></p>
+  <p>Simple • Fast • Free</p>
+  <p>© 2026 India Calculator Hub</p>
 </footer>
+
 
 <script>
 
@@ -180,99 +309,668 @@ function openCalculator(type) {
 
   const area = document.getElementById("calculatorArea");
 
-  area.innerHTML = "";
-
   if (type === "age") {
-    area.innerHTML = `
-      <div class="calculator active">
-        <h2>🎂 Age Calculator</h2>
-        <p>Age calculator will be added next.</p>
-      </div>
-    `;
+    area.innerHTML = ageCalculator();
   }
 
-  if (type === "percentage") {
-    area.innerHTML = `
-      <div class="calculator active">
-        <h2>💯 Percentage Calculator</h2>
-        <p>Percentage calculator will be added next.</p>
-      </div>
-    `;
+  else if (type === "percentage") {
+    area.innerHTML = percentageCalculator();
   }
 
-  if (type === "bmi") {
-    area.innerHTML = `
-      <div class="calculator active">
-        <h2>⚖️ BMI Calculator</h2>
-        <p>BMI calculator will be added next.</p>
-      </div>
-    `;
+  else if (type === "bmi") {
+    area.innerHTML = bmiCalculator();
   }
 
-  if (type === "date") {
-    area.innerHTML = `
-      <div class="calculator active">
-        <h2>📅 Date Difference</h2>
-        <p>Date calculator will be added next.</p>
-      </div>
-    `;
+  else if (type === "date") {
+    area.innerHTML = dateCalculator();
   }
 
-  if (type === "discount") {
-    area.innerHTML = `
-      <div class="calculator active">
-        <h2>💰 Discount Calculator</h2>
-        <p>Discount calculator will be added next.</p>
-      </div>
-    `;
+  else if (type === "discount") {
+    area.innerHTML = discountCalculator();
   }
 
-  if (type === "emi") {
-    area.innerHTML = `
-      <div class="calculator active">
-        <h2>🏦 EMI Calculator</h2>
-        <p>EMI calculator will be added next.</p>
-      </div>
-    `;
+  else if (type === "emi") {
+    area.innerHTML = emiCalculator();
   }
 
-  if (type === "gst") {
-    area.innerHTML = `
-      <div class="calculator active">
-        <h2>🧾 GST Calculator</h2>
-        <p>GST calculator will be added next.</p>
-      </div>
-    `;
+  else if (type === "gst") {
+    area.innerHTML = gstCalculator();
   }
 
-  if (type === "simpleInterest") {
-    area.innerHTML = `
-      <div class="calculator active">
-        <h2>💵 Simple Interest</h2>
-        <p>Simple Interest calculator will be added next.</p>
-      </div>
-    `;
+  else if (type === "simpleInterest") {
+    area.innerHTML = simpleInterestCalculator();
   }
 
-  if (type === "compoundInterest") {
-    area.innerHTML = `
-      <div class="calculator active">
-        <h2>📈 Compound Interest</h2>
-        <p>Compound Interest calculator will be added next.</p>
-      </div>
-    `;
+  else if (type === "compoundInterest") {
+    area.innerHTML = compoundInterestCalculator();
   }
 
-  if (type === "loan") {
-    area.innerHTML = `
-      <div class="calculator active">
-        <h2>🏠 Loan Calculator</h2>
-        <p>Loan calculator will be added next.</p>
-      </div>
-    `;
+  else if (type === "loan") {
+    area.innerHTML = loanCalculator();
   }
 
   area.scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
+
+
+/* AGE */
+
+function ageCalculator() {
+
+  return `
+  <div class="calculator">
+
+    <h2>🎂 Age Calculator</h2>
+
+    <label>Date of Birth</label>
+    <input type="date" id="dob">
+
+    <button class="calculate-btn" onclick="calculateAge()">
+      Calculate Age
+    </button>
+
+    <div id="ageResult"></div>
+
+    <button class="back-btn" onclick="closeCalculator()">
+      ← Back
+    </button>
+
+  </div>`;
+}
+
+
+function calculateAge() {
+
+  const value = document.getElementById("dob").value;
+  const result = document.getElementById("ageResult");
+
+  if (!value) {
+    result.innerHTML = `<div class="result">Please enter your date of birth.</div>`;
+    return;
+  }
+
+  const dob = new Date(value);
+  const today = new Date();
+
+  if (dob > today) {
+    result.innerHTML = `<div class="result">Date of birth cannot be in the future.</div>`;
+    return;
+  }
+
+  let years = today.getFullYear() - dob.getFullYear();
+  let months = today.getMonth() - dob.getMonth();
+  let days = today.getDate() - dob.getDate();
+
+  if (days < 0) {
+    months--;
+
+    const previousMonth = new Date(
+      today.getFullYear(),
+      today.getMonth(),
+      0
+    );
+
+    days += previousMonth.getDate();
+  }
+
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+
+  result.innerHTML = `
+    <div class="result">
+      Your Age:<br>
+      ${years} Years, ${months} Months, ${days} Days
+    </div>
+  `;
+}
+
+
+/* PERCENTAGE */
+
+function percentageCalculator() {
+
+  return `
+  <div class="calculator">
+
+    <h2>💯 Percentage Calculator</h2>
+
+    <label>Enter obtained value</label>
+    <input type="number" id="percentageValue" placeholder="Example: 450">
+
+    <label>Enter total value</label>
+    <input type="number" id="percentageTotal" placeholder="Example: 500">
+
+    <button class="calculate-btn" onclick="calculatePercentage()">
+      Calculate Percentage
+    </button>
+
+    <div id="percentageResult"></div>
+
+    <button class="back-btn" onclick="closeCalculator()">← Back</button>
+
+  </div>`;
+}
+
+
+function calculatePercentage() {
+
+  const value = Number(document.getElementById("percentageValue").value);
+  const total = Number(document.getElementById("percentageTotal").value);
+
+  if (value < 0 || total <= 0) {
+    document.getElementById("percentageResult").innerHTML =
+      `<div class="result">Please enter valid values.</div>`;
+    return;
+  }
+
+  const result = (value / total) * 100;
+
+  document.getElementById("percentageResult").innerHTML =
+    `<div class="result">Percentage = ${result.toFixed(2)}%</div>`;
+}
+
+
+/* BMI */
+
+function bmiCalculator() {
+
+  return `
+  <div class="calculator">
+
+    <h2>⚖️ BMI Calculator</h2>
+
+    <label>Weight (kg)</label>
+    <input type="number" id="weight" placeholder="Example: 60">
+
+    <label>Height (cm)</label>
+    <input type="number" id="height" placeholder="Example: 165">
+
+    <button class="calculate-btn" onclick="calculateBMI()">
+      Calculate BMI
+    </button>
+
+    <div id="bmiResult"></div>
+
+    <button class="back-btn" onclick="closeCalculator()">← Back</button>
+
+  </div>`;
+}
+
+
+function calculateBMI() {
+
+  const weight = Number(document.getElementById("weight").value);
+  const height = Number(document.getElementById("height").value);
+
+  if (weight <= 0 || height <= 0) {
+    document.getElementById("bmiResult").innerHTML =
+      `<div class="result">Please enter valid weight and height.</div>`;
+    return;
+  }
+
+  const heightMeter = height / 100;
+  const bmi = weight / (heightMeter * heightMeter);
+
+  let category = "";
+
+  if (bmi < 18.5) {
+    category = "Underweight";
+  }
+  else if (bmi < 25) {
+    category = "Normal range";
+  }
+  else if (bmi < 30) {
+    category = "Overweight";
+  }
+  else {
+    category = "Obesity";
+  }
+
+  document.getElementById("bmiResult").innerHTML = `
+    <div class="result">
+      BMI = ${bmi.toFixed(2)}<br>
+      Category: ${category}
+    </div>
+  `;
+}
+
+
+/* DATE DIFFERENCE */
+
+function dateCalculator() {
+
+  return `
+  <div class="calculator">
+
+    <h2>📅 Date Difference Calculator</h2>
+
+    <label>Start Date</label>
+    <input type="date" id="startDate">
+
+    <label>End Date</label>
+    <input type="date" id="endDate">
+
+    <button class="calculate-btn" onclick="calculateDateDifference()">
+      Calculate Difference
+    </button>
+
+    <div id="dateResult"></div>
+
+    <button class="back-btn" onclick="closeCalculator()">← Back</button>
+
+  </div>`;
+}
+
+
+function calculateDateDifference() {
+
+  const start = new Date(document.getElementById("startDate").value);
+  const end = new Date(document.getElementById("endDate").value);
+
+  if (isNaN(start) || isNaN(end)) {
+    document.getElementById("dateResult").innerHTML =
+      `<div class="result">Please select both dates.</div>`;
+    return;
+  }
+
+  if (end < start) {
+    document.getElementById("dateResult").innerHTML =
+      `<div class="result">End date must be after start date.</div>`;
+    return;
+  }
+
+  const difference = end - start;
+  const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+
+  document.getElementById("dateResult").innerHTML = `
+    <div class="result">
+      Difference: ${days} Days
+    </div>
+  `;
+}
+
+
+/* DISCOUNT */
+
+function discountCalculator() {
+
+  return `
+  <div class="calculator">
+
+    <h2>💰 Discount Calculator</h2>
+
+    <label>Original Price</label>
+    <input type="number" id="originalPrice" placeholder="Example: 1000">
+
+    <label>Discount (%)</label>
+    <input type="number" id="discountPercent" placeholder="Example: 20">
+
+    <button class="calculate-btn" onclick="calculateDiscount()">
+      Calculate Discount
+    </button>
+
+    <div id="discountResult"></div>
+
+    <button class="back-btn" onclick="closeCalculator()">← Back</button>
+
+  </div>`;
+}
+
+
+function calculateDiscount() {
+
+  const price = Number(document.getElementById("originalPrice").value);
+  const discount = Number(document.getElementById("discountPercent").value);
+
+  if (price <= 0 || discount < 0 || discount > 100) {
+    document.getElementById("discountResult").innerHTML =
+      `<div class="result">Please enter valid values.</div>`;
+    return;
+  }
+
+  const saved = price * discount / 100;
+  const finalPrice = price - saved;
+
+  document.getElementById("discountResult").innerHTML = `
+    <div class="result">
+      Discount Amount: ₹${saved.toFixed(2)}<br>
+      Final Price: ₹${finalPrice.toFixed(2)}
+    </div>
+  `;
+}
+
+
+/* EMI */
+
+function emiCalculator() {
+
+  return `
+  <div class="calculator">
+
+    <h2>🏦 EMI Calculator</h2>
+
+    <label>Loan Amount (₹)</label>
+    <input type="number" id="emiLoan" placeholder="Example: 500000">
+
+    <label>Annual Interest Rate (%)</label>
+    <input type="number" id="emiRate" placeholder="Example: 8.5">
+
+    <label>Loan Tenure (Years)</label>
+    <input type="number" id="emiYears" placeholder="Example: 5">
+
+    <button class="calculate-btn" onclick="calculateEMI()">
+      Calculate EMI
+    </button>
+
+    <div id="emiResult"></div>
+
+    <button class="back-btn" onclick="closeCalculator()">← Back</button>
+
+  </div>`;
+}
+
+
+function calculateEMI() {
+
+  const principal = Number(document.getElementById("emiLoan").value);
+  const annualRate = Number(document.getElementById("emiRate").value);
+  const years = Number(document.getElementById("emiYears").value);
+
+  if (principal <= 0 || annualRate < 0 || years <= 0) {
+    document.getElementById("emiResult").innerHTML =
+      `<div class="result">Please enter valid values.</div>`;
+    return;
+  }
+
+  const months = years * 12;
+  const monthlyRate = annualRate / 12 / 100;
+
+  let emi;
+
+  if (monthlyRate === 0) {
+    emi = principal / months;
+  } else {
+    emi =
+      principal *
+      monthlyRate *
+      Math.pow(1 + monthlyRate, months) /
+      (Math.pow(1 + monthlyRate, months) - 1);
+  }
+
+  const totalPayment = emi * months;
+  const totalInterest = totalPayment - principal;
+
+  document.getElementById("emiResult").innerHTML = `
+    <div class="result">
+      Monthly EMI: ₹${emi.toFixed(2)}<br>
+      Total Interest: ₹${totalInterest.toFixed(2)}<br>
+      Total Payment: ₹${totalPayment.toFixed(2)}
+    </div>
+  `;
+}
+
+
+/* GST */
+
+function gstCalculator() {
+
+  return `
+  <div class="calculator">
+
+    <h2>🧾 GST Calculator</h2>
+
+    <label>Amount (₹)</label>
+    <input type="number" id="gstAmount" placeholder="Example: 1000">
+
+    <label>GST Rate (%)</label>
+    <select id="gstRate">
+      <option value="5">5%</option>
+      <option value="12">12%</option>
+      <option value="18" selected>18%</option>
+      <option value="28">28%</option>
+    </select>
+
+    <button class="calculate-btn" onclick="calculateGST()">
+      Calculate GST
+    </button>
+
+    <div id="gstResult"></div>
+
+    <button class="back-btn" onclick="closeCalculator()">← Back</button>
+
+  </div>`;
+}
+
+
+function calculateGST() {
+
+  const amount = Number(document.getElementById("gstAmount").value);
+  const rate = Number(document.getElementById("gstRate").value);
+
+  if (amount <= 0) {
+    document.getElementById("gstResult").innerHTML =
+      `<div class="result">Please enter a valid amount.</div>`;
+    return;
+  }
+
+  const gst = amount * rate / 100;
+  const total = amount + gst;
+
+  document.getElementById("gstResult").innerHTML = `
+    <div class="result">
+      GST Amount: ₹${gst.toFixed(2)}<br>
+      Total Amount: ₹${total.toFixed(2)}
+    </div>
+  `;
+}
+
+
+/* SIMPLE INTEREST */
+
+function simpleInterestCalculator() {
+
+  return `
+  <div class="calculator">
+
+    <h2>💵 Simple Interest Calculator</h2>
+
+    <label>Principal Amount (₹)</label>
+    <input type="number" id="siPrincipal" placeholder="Example: 10000">
+
+    <label>Rate of Interest (%)</label>
+    <input type="number" id="siRate" placeholder="Example: 8">
+
+    <label>Time (Years)</label>
+    <input type="number" id="siTime" placeholder="Example: 2">
+
+    <button class="calculate-btn" onclick="calculateSimpleInterest()">
+      Calculate
+    </button>
+
+    <div id="siResult"></div>
+
+    <button class="back-btn" onclick="closeCalculator()">← Back</button>
+
+  </div>`;
+}
+
+
+function calculateSimpleInterest() {
+
+  const principal = Number(document.getElementById("siPrincipal").value);
+  const rate = Number(document.getElementById("siRate").value);
+  const time = Number(document.getElementById("siTime").value);
+
+  if (principal <= 0 || rate < 0 || time <= 0) {
+    document.getElementById("siResult").innerHTML =
+      `<div class="result">Please enter valid values.</div>`;
+    return;
+  }
+
+  const interest = principal * rate * time / 100;
+  const total = principal + interest;
+
+  document.getElementById("siResult").innerHTML = `
+    <div class="result">
+      Simple Interest: ₹${interest.toFixed(2)}<br>
+      Total Amount: ₹${total.toFixed(2)}
+    </div>
+  `;
+}
+
+
+/* COMPOUND INTEREST */
+
+function compoundInterestCalculator() {
+
+  return `
+  <div class="calculator">
+
+    <h2>📈 Compound Interest Calculator</h2>
+
+    <label>Principal Amount (₹)</label>
+    <input type="number" id="ciPrincipal" placeholder="Example: 10000">
+
+    <label>Annual Rate (%)</label>
+    <input type="number" id="ciRate" placeholder="Example: 8">
+
+    <label>Time (Years)</label>
+    <input type="number" id="ciTime" placeholder="Example: 3">
+
+    <label>Compounding</label>
+    <select id="ciFrequency">
+      <option value="1">Yearly</option>
+      <option value="2">Half-Yearly</option>
+      <option value="4">Quarterly</option>
+      <option value="12">Monthly</option>
+    </select>
+
+    <button class="calculate-btn" onclick="calculateCompoundInterest()">
+      Calculate
+    </button>
+
+    <div id="ciResult"></div>
+
+    <button class="back-btn" onclick="closeCalculator()">← Back</button>
+
+  </div>`;
+}
+
+
+function calculateCompoundInterest() {
+
+  const principal = Number(document.getElementById("ciPrincipal").value);
+  const rate = Number(document.getElementById("ciRate").value);
+  const time = Number(document.getElementById("ciTime").value);
+  const frequency = Number(document.getElementById("ciFrequency").value);
+
+  if (principal <= 0 || rate < 0 || time <= 0) {
+    document.getElementById("ciResult").innerHTML =
+      `<div class="result">Please enter valid values.</div>`;
+    return;
+  }
+
+  const amount =
+    principal *
+    Math.pow(
+      1 + (rate / 100) / frequency,
+      frequency * time
+    );
+
+  const interest = amount - principal;
+
+  document.getElementById("ciResult").innerHTML = `
+    <div class="result">
+      Compound Interest: ₹${interest.toFixed(2)}<br>
+      Total Amount: ₹${amount.toFixed(2)}
+    </div>
+  `;
+}
+
+
+/* LOAN */
+
+function loanCalculator() {
+
+  return `
+  <div class="calculator">
+
+    <h2>🏠 Loan Calculator</h2>
+
+    <label>Loan Amount (₹)</label>
+    <input type="number" id="loanAmount" placeholder="Example: 1000000">
+
+    <label>Interest Rate (%)</label>
+    <input type="number" id="loanRate" placeholder="Example: 8.5">
+
+    <label>Loan Tenure (Years)</label>
+    <input type="number" id="loanYears" placeholder="Example: 10">
+
+    <button class="calculate-btn" onclick="calculateLoan()">
+      Calculate Loan
+    </button>
+
+    <div id="loanResult"></div>
+
+    <button class="back-btn" onclick="closeCalculator()">← Back</button>
+
+  </div>`;
+}
+
+
+function calculateLoan() {
+
+  const principal = Number(document.getElementById("loanAmount").value);
+  const rate = Number(document.getElementById("loanRate").value);
+  const years = Number(document.getElementById("loanYears").value);
+
+  if (principal <= 0 || rate < 0 || years <= 0) {
+    document.getElementById("loanResult").innerHTML =
+      `<div class="result">Please enter valid values.</div>`;
+    return;
+  }
+
+  const months = years * 12;
+  const monthlyRate = rate / 12 / 100;
+
+  let emi;
+
+  if (monthlyRate === 0) {
+    emi = principal / months;
+  } else {
+    emi =
+      principal *
+      monthlyRate *
+      Math.pow(1 + monthlyRate, months) /
+      (Math.pow(1 + monthlyRate, months) - 1);
+  }
+
+  const totalPayment = emi * months;
+  const totalInterest = totalPayment - principal;
+
+  document.getElementById("loanResult").innerHTML = `
+    <div class="result">
+      Monthly EMI: ₹${emi.toFixed(2)}<br>
+      Total Interest: ₹${totalInterest.toFixed(2)}<br>
+      Total Repayment: ₹${totalPayment.toFixed(2)}
+    </div>
+  `;
+}
+
+
+/* CLOSE */
+
+function closeCalculator() {
+
+  document.getElementById("calculatorArea").innerHTML = "";
+
+  window.scrollTo({
+    top: 0,
     behavior: "smooth"
   });
 }
