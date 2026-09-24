@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rsoni16081999-alt.github.io/Rashmi-Soni-/sitemap.xml
